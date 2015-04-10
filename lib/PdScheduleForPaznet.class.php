@@ -42,7 +42,7 @@ class PdScheduleForPaznet extends PdSchedule
         if (array($nodes) && count($nodes) > 0) {
             $date_text = reset($nodes)->text();
             $matches = array();
-            if (preg_match('/(?P<month>\d{1,2}).+(?P<day>\d{1,2})/', $date_text, $matches) === 1) {
+            if (preg_match('/(?P<month>\d{1,2})[^\d]+?(?P<day>\d{1,2})/', $date_text, $matches) === 1) {
                 $date_str = date('Y') . '-' . $matches['month'] . '-' . $matches['day'];
                 $this->setDate($date_str);
             }
