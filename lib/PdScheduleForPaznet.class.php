@@ -24,6 +24,7 @@ class PdScheduleForPaznet extends PdSchedule
             'shinka-rush' => '進化ラッシュ',
             'iseki' => '星宝の遺跡',
             'czcolm' => '超絶メタドラ',
+            'hikyou' => 'たまドラの秘境',
         );
 
         $result = array(
