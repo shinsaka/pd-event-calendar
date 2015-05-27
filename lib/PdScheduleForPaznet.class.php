@@ -26,6 +26,7 @@ class PdScheduleForPaznet extends PdSchedule
             'czcolm' => '超絶メタドラ',
             'hikyou' => 'たまドラの秘境',
             'konjiki' => '金色の築山',
+            'rarechara' => 'レアキャラ',
         );
 
         $result = array(
