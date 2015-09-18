@@ -39,10 +39,10 @@ class PdScheduleForPaznet extends PdSchedule
         );
 
         // 公開サイト読み込み
-        $dom = file_get_html('http://paznet.net/schedules/blog_parts/270');
+        $dom = file_get_html('http://paznet.net/');
 
         // get date
-        $nodes = $dom->find("table.schedule-table caption");
+        $nodes = $dom->find("table.table caption");
         if (array($nodes) && count($nodes) > 0) {
             $date_text = reset($nodes)->text();
             $matches = array();
@@ -54,7 +54,7 @@ class PdScheduleForPaznet extends PdSchedule
 
         // イベント種類すべて検索・走査する
         foreach ($event_patterns as $key => $pattern) {
-            $nodes = $dom->find("table.schedule-table td." . $key);
+            $nodes = $dom->find("table.table td." . $key);
             // イベントなしor5個(AtoE)の倍数でなければ無視
             if (count($nodes) == 0 || count($nodes) % 5 != 0) {
                 continue;
