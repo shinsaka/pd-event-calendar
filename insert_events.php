@@ -12,7 +12,8 @@ $pd_calendar = new PdCalendar();
 $pd_calendar->setAuthEmail($pd_config->getGcalAuthEmail());
 $pd_calendar->setP12Key(file_get_contents($pd_config->getGcalP12KeyfilePath()));
 
-$pd_schedule = new PdScheduleForPaznet();
+//$pd_schedule = new PdScheduleForPaznet();
+$pd_schedule = new PdScheduleForGame8Wiki();
 $pd_classes = $pd_schedule->getPdClasses();
 
 // 該当日の予定を削除
