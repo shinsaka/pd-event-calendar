@@ -1,5 +1,5 @@
 <?php
-require_once('lib/phpquery/phpQuery-onefile.php');
+require_once dirname(__FILE__) . '/../lib/phpquery/phpQuery-onefile.php';
 
 class PdScheduleForGame8Wiki extends PdSchedule
 {
