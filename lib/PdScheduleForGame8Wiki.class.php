@@ -46,7 +46,7 @@ class PdScheduleForGame8Wiki extends PdSchedule
                        $pd_class = $this->pd_classes[$this->indexToClassKey($col_num)]; /* @var $pd_class PdClass */
  //                      echo "class " . $this->indexToClassKey($col_num) ."\n";
                        foreach ($event_times as $event_time) {
-                           $pd_class->addEvent($title, sprintf('%s %s', $this->getDate(), $event_time));
+                           $pd_class->addEvent($this->titleNameConvert($title), sprintf('%s %s', $this->getDate(), $event_time));
 //                           echo "time:" . sprintf('%s %s', $this->getDate(), $event_time) . "\n";
                        }
                    }
@@ -67,5 +67,14 @@ class PdScheduleForGame8Wiki extends PdSchedule
     private function indexToClassKey($index)
     {
         return substr('ABCDE', ($index - 1) % 5, 1);
+    }
+
+    private function titleNameConvert($title)
+    {
+        $title_conv_patterns = array(
+            '火デーモン' => '星宝の魔窟',
+        );
+
+        return array_key_exists($title, $title_conv_patterns) ? $title_conv_patterns[$title] : $title;
     }
 }
