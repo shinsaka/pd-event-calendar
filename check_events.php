@@ -2,7 +2,8 @@
 require_once dirname(__FILE__) . '/lib/autoloader.php';
 
 //$pd_schedule = new PdScheduleForPaznet();
-$pd_schedule = new PdScheduleForGame8Wiki();
+//$pd_schedule = new PdScheduleForGame8Wiki();
+$pd_schedule = new PdScheduleForYahooGames();
 $pd_classes = $pd_schedule->getPdClasses();
 
 // A組 to E組
